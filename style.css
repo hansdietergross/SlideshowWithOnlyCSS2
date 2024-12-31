@@ -1,0 +1,105 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,800);
+
+body {
+  background: linear-gradient(45deg, rgba(128, 128, 128, 0.226), rgb(65, 64, 64));
+  height: 100vh;
+  margin: 0;
+}
+
+*{
+  transition: all .5s ease-in-out;
+}
+.title {
+  text-align: center;
+  padding: 15px;
+  font-family: "Raleway";
+  font-size: 50px;
+  font-size: 500;
+  color: #fff;
+  text-shadow: 0 13px 26px rgba(0, 0, 0, 0.3), 0 12px 6px rgba(0, 0, 0, 0.2);
+}
+
+.slides-container {
+  position: relative;
+  width: 50%;
+  height: 32vw;
+  margin: 150px auto;
+  perspective: 800px;
+  transform-style: preserve-3d;
+}
+
+img {
+  position: absolute;
+  background-position: center;
+  background-size: contain;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+input {
+  /* Buttons will be place beneath! */
+  position: relative;
+  /* Under the container */
+  top: 108%;
+  left: 30%;
+  width: 18px;
+  height: 18px;
+  margin-left: 15px;
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+label[id^=img-container]{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3), 0 2px 2px rgba(0, 0, 0, 0.2);  
+}
+
+#buttonID1:checked~#img-container1,
+#buttonID2:checked~#img-container2,
+#buttonID3:checked~#img-container3,
+#buttonID4:checked~#img-container4,
+#buttonID5:checked~#img-container5 { 
+  transform: translate3d(0%, 0, 0px);
+  cursor: auto;
+}
+#buttonID1:checked~#img-container2,
+#buttonID2:checked~#img-container3,
+#buttonID3:checked~#img-container4,
+#buttonID4:checked~#img-container5,
+#buttonID5:checked~#img-container1 { 
+  transform: translate3d(15%, 0, -100px);
+  cursor: pointer;
+}
+
+#buttonID1:checked~#img-container3,
+#buttonID2:checked~#img-container4,
+#buttonID3:checked~#img-container5,
+#buttonID4:checked~#img-container1,
+#buttonID5:checked~#img-container2 { 
+  transform: translate3d(30%, 0, -200px);
+  cursor: pointer;
+}
+
+#buttonID1:checked~#img-container4,
+#buttonID2:checked~#img-container5,
+#buttonID3:checked~#img-container1,
+#buttonID4:checked~#img-container2,
+#buttonID5:checked~#img-container3 { 
+  transform: translate3d(-30%, 0, -200px);
+  cursor: pointer;
+}
+#buttonID1:checked~#img-container5,
+#buttonID2:checked~#img-container1,
+#buttonID3:checked~#img-container2,
+#buttonID4:checked~#img-container3,
+#buttonID5:checked~#img-container4 { 
+  transform: translate3d(-15%, 0, -100px);
+  cursor: pointer;
+}
+
